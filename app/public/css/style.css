@@ -1,0 +1,287 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: Helvetica, Arial, Thonburi, Tahoma, FreeSans, sans-serif;
+}
+h2 {
+  margin: 0 0 6px 0;
+  font-weight: bold;
+}
+h6 {
+  margin: 2px 0 20px 0;
+}
+hr {
+  margin: 14px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+ul {
+  margin: 4px 0 0 0;
+}
+label,
+h6 {
+  color: #808080;
+  font-size: 14px;
+  font-weight: normal;
+  text-shadow: -1px 1px 0 #fff;
+}
+.well {
+  background: #f8f8f8;
+  margin-bottom: 0;
+}
+.well .tab-title {
+  float: left;
+  margin-left: 10px;
+}
+.well .button-top-right {
+  float: right;
+  margin: 0 10px 20px 0;
+}
+.navbar-btn {
+  min-width: 100px;
+  margin-right: 8px;
+}
+.glyphicon {
+  margin-right: 8px;
+}
+#login label {
+  margin-left: 2px;
+}
+#login form {
+  width: 320px;
+}
+#login .controls {
+  margin-top: 20px;
+}
+#login .controls .button-rememember-me {
+  float: left;
+  width: 150px;
+}
+#login .controls .button-sign-in {
+  float: right;
+  width: 120px;
+}
+#login .btm-links {
+  font-size: 0.9em;
+  margin: 2px 0 0 0;
+}
+#login .btm-links #forgot-password {
+  float: left;
+  margin-left: 10px;
+}
+#login .btm-links #create-account {
+  float: right;
+  margin-right: 5px;
+}
+#account-form-container form {
+  width: 580px;
+}
+.modal .modal-dialog {
+  width: 480px;
+}
+.modal .modal-dialog-wide1 {
+  width: 580px;
+/* margin left = (480px-580px)/2 = -50px */
+  margin-left: -50px;
+}
+.modal .modal-dialog-wide2 {
+  width: 600px;
+  margin-left: -60px;
+}
+.modal .form-group {
+  margin-bottom: 10px;
+}
+.modal .alert {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 8px 15px 8px 15px;
+}
+.modal .alert-dismissable,
+.modal .close {
+  right: -4px;
+}
+.modal p {
+  margin: 0;
+  padding: 0;
+}
+.modal .modal-footer button {
+  width: 80px;
+}
+.modal-admin {
+  width: 750px;
+  margin-left: -375px;
+}
+.center-vertical {
+  height: 100vh;
+}
+.center-vertical form {
+  top: 50%;
+  margin: auto;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.form-horizontal .form-buttons {
+  float: right;
+}
+.form-horizontal .form-buttons .btn {
+  width: 80px;
+  margin-left: 6px;
+}
+.form-horizontal input,
+.form-horizontal select {
+  height: 30px;
+}
+.jumbotron {
+  padding: 48px 0 0 0;
+  margin-bottom: 0;
+  height: 600px;
+  display: block;
+  background-color: #8eb2b6;
+}
+.h-container {
+  left: 6px;
+  top: 44px;
+  position: absolute;
+}
+.h1color {
+  color: #fff !important;
+}
+.h2color {
+  color: #fff;
+}
+.h3color {
+  color: #fff;
+  opacity: 1;
+  z-index: 100;
+}
+.background-image {
+  height: 100%;
+  background-size: 100% auto;
+  background-image: url("/images/kidbright_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header {
+  background-color: #4c6972;
+}
+.footer {
+  display: table;
+  width: 100%;
+  height: 40px;
+  padding: 3px 0 0 18px;
+  background-color: #4c6972;
+}
+.footer-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.footer-image {
+  float: left;
+}
+.footer-text {
+  font-size: 14px;
+  float: left;
+  padding: 3px 0 0 8px;
+  color: #fff;
+}
+.footer-text.a {
+  color: #fff;
+}
+.footer-text-right {
+  font-size: 12px;
+  float: right;
+  padding: 3px 0 0 8px;
+  margin-right: 8px;
+  color: #fff;
+}
+.pad-left-4 {
+  padding-left: 4px;
+}
+.link-url {
+  color: #fff !important;
+}
+.no-border {
+  border: 0px;
+}
+/*.modal-form-confirm {
+	z-index : 1500;
+}*/
+.modal-alert {
+  z-index: 1500 !important;
+}
+.lang-container {
+  display: table;
+  background-color: #38555e;
+  border-radius: 3px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+.lang-text {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 2px 4px 2px 4px;
+}
+.lang-space {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px;
+}
+.kb_backgound {
+  width: 326px;
+  height: 170px;
+  background-color: #f0f0f0;
+  opacity: 0.2;
+  border-radius: 10px;
+  left: 6px;
+  top: 56px;
+  position: absolute;
+}
+.kb_logo_top {
+  margin-top: 12px;
+  margin-right: 8px;
+}
+.kb_news {
+  width: 520px;
+  height: 170px;
+  background-color: #f0f0f0;
+  padding: 4px;
+  opacity: 0.9;
+  border-radius: 10px;
+  left: 0px;
+  top: 220px;
+  position: absolute;
+  font-size: 16px;
+}
+.yr_news {
+  width: 250px;
+  height: 130px;
+  background-color: #f0f0f0;
+  padding: 4px;
+  opacity: 0.9;
+  border-radius: 10px;
+  left: 0px;
+  top: 420px;
+  position: absolute;
+  font-size: 16px;
+}
+.modal-row {
+  margin-bottom: 16px;
+}
+.btn:disabled {
+/* default opacity = 0.65 */
+  opacity: 0.4 !important;
+}
+.list-group {
+  max-height: 500px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}

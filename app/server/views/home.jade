@@ -1,0 +1,73 @@
+extends layout
+
+block content
+	nav.navbar-default.header
+		.container
+			ul.nav.navbar-nav
+				img(src="/images/kidbright-logo_text_top.png", height="24").kb_logo_top
+			ul.nav.navbar-nav(style="padding-left: 10px")
+				li
+					button#btn-open.btn.btn-default.navbar-btn Open File
+				li
+					button#btn-save.btn.btn-default.navbar-btn Save File
+				li
+					button#btn-delete.btn.btn-default.navbar-btn Delete File
+				li
+					button#btn-build.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Program Build
+				li
+					button#btn-setclock.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Set Clock
+				li
+					button#btn-wifi-config.btn.btn-default.navbar-btn WIFI Config
+				li
+					button#btn-qrcode.btn.btn-default.navbar-btn QR Code
+			ul.nav.navbar-nav.navbar-right
+				li
+					.lang-container
+						.lang-text
+							a#home-lang-en(href="#",title="Switch to english language").link-url Eng
+						.lang-space.link-url
+							| |
+						.lang-text
+							a#home-lang-th(href="#",title="สลับไปใช้ภาษาไทย").link-url ไทย
+				li(style="padding-left: 10px")
+					.lang-container
+						.lang-text(style="color: #a0a0a0")#version-text
+							| version
+	// blockly category language
+	- if (ulang == 'th')
+		include blockly-th
+	- else
+		include blockly
+
+	include modals/alert
+	include modals/confirm
+	include modals/prompt
+	include modals/build
+	include modals/save-file-browser
+	include modals/save-overwrite-confirm
+	include modals/open-file-browser
+	include modals/delete-file-browser
+	include modals/delete-confirm
+	include modals/set-clock
+	include modals/setting-clock
+	include modals/wifi-config
+	include modals/qrcode
+
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/vendor/moment.js')
+	script(src='/js/views/timezone-list.js')
+	script(src='/js/views/home.js')
+	script(src='/js/controllers/homeController.js')
+	// blockly
+	script(src='blockly/blockly_compressed.js')
+	//script(src='blockly/blockly_uncompressed.js')
+	script(src='blockly/blocks_compressed.js')
+	script(src='blockly/javascript_compressed.js')
+	// blockly blocks language
+	script(src='blockly/lang.js')
+	script(src='blockly/kidbright/blocks.js')
+	script(src='blockly/kidbright/generators.js')
+	script(src='blockly/kidbright/app.js')

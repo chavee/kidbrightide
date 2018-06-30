@@ -1,0 +1,11 @@
+.modal-prompt.modal.fade
+	.modal-dialog(style="width:25%; margin: auto")
+		.modal-content
+			.modal-header
+				//button.close(data-dismiss='modal') x
+				h4
+			.modal-body
+				input.form-control#prompt-text(type='text', autofocus)
+			.modal-footer
+				button#prompt-btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
+				button#prompt-btn-ok.btn.btn-primary OK
