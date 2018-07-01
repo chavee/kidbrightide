@@ -13,6 +13,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "jade": "^1.11.0",
+    "md5": "^2.2.1",
     "moment": "^2.22.2",
     "qrcode": "^1.2.0",
     "serialport": "^6.2.0"
