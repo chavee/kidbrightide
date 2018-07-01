@@ -5,6 +5,7 @@ const exec = require('child_process').exec;
 const moment = require('moment');
 const SerialPort = require('serialport');
 const QRCode = require('qrcode');
+const md5 = require('md5');
 
 module.exports = function(app, Config, Log) {
 	const server_dir = __dirname;
@@ -359,6 +360,10 @@ module.exports = function(app, Config, Log) {
 	app.post('/build', function(req, res) {
 		var board_id = req.body['board_id'];
 		var mac_addr = req.body['mac_addr'];
+		var kbmac_addr = (mac_addr.replace(/:/g, "")).toUpperCase();
+		var md5_mac_addr = md5("K:" + kbmac_addr);
+		// console.log('=== ' + kbmac_addr);
+		// console.log(md5_mac_addr);
 
 		var sta_ssid = req.body['sta_ssid'];
 		var sta_password = req.body['sta_password'];
@@ -468,10 +473,10 @@ module.exports = function(app, Config, Log) {
 				'#include "nvs_flash.h"\n' +
 				'#include "wificontroller.h"\n' +
 				'#include "kbiot.h"\n\n' +
-				'#define KBSERIAL "/30AEA47F2988"\n' +
-				'#define CLIENTID "iuwY9jf0eAHA379d"\n' +
-				'#define USERNAME "PCm14heuToCyaOv%1529397480"\n' +
-				'#define PASSWORD "SlVXtw0DLwfPQGVcprlxeuRSHoA="\n\n' +
+				'#define KBSERIAL "' + kbmac_addr + '"\n' + // "/30AEA47F2988"\n' +
+				'#define CLIENTID "' + kbmac_addr + '"\n' + // "iuwY9jf0eAHA379d"\n' +
+				'#define USERNAME "' + md5_mac_addr + '"\n' + // "PCm14heuToCyaOv%1529397480"\n' +
+				'#define PASSWORD ""\n' +  // "SlVXtw0DLwfPQGVcprlxeuRSHoA="\n\n' +
 				'#define CONFIG_WIFI_SSID "' + sta_ssid + '"\n' +  // catbus
 				'#define CONFIG_WIFI_PASSWORD "' + sta_password + '"\n\n' + // stud2559
 				// ===
@@ -495,7 +500,12 @@ module.exports = function(app, Config, Log) {
 			try {
 				// create build directory
 				var board_name = mac_addr.replace(/:/g, '-');
-				var user_app_dir = Config.process_dir + '/esp32/build/' + board_name;
+				var build_dir = Config.process_dir + '/esp32/build';
+				var user_app_dir = build_dir + '/' + board_name;
+
+				if (!fs.existsSync(build_dir)) {
+					fs.mkdirSync(build_dir);
+				}
 
 				if (!fs.existsSync(user_app_dir)) {
 					fs.mkdirSync(user_app_dir);
