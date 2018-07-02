@@ -569,6 +569,7 @@ function HomeController() {
 	$('#btn-qrcode').click(function(){
 		Blockly.JavaScript.resetTaskNumber();
 		$('.modal-qrcode .modal-body').text('');
+		$('img #qrcode-img').remove();
 		// $('.modal-qrcode .modal-body').append('<li id="board_checking_li">' + LANG_BOARD_CHECKING + '...</li>');
 		$.ajax({
 			url: '/port_list',
@@ -607,7 +608,7 @@ function HomeController() {
 								},
 								success: function(reply) {
 									// $('#board_checking_li').text(LANG_BOARD_CHECKING + '... ' + LANG_PASSED + ' (' + mac_addr + ')');
-									$('.modal-qrcode .modal-body').append('<img src="/images/qrcode.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">');
+									$('.modal-qrcode .modal-body').append('<img id="qrcode-img" src="/images/qrcode.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">');
 								}
 							});
 						}

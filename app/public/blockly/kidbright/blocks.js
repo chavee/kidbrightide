@@ -1658,11 +1658,11 @@ Blockly.Blocks["gauge_iot"] = {
 			    "name": "GAUGE_SELECTION",
 			    "options": [
 			      [
-			        "gauge1",
+			        Blockly.Msg.GAUGE_G1,
 			        "G1"
 			      ],
 			      [
-			        "gauge2",
+			        Blockly.Msg.GAUGE_G2,
 			        "G2"
 			      ]
 			    ]
@@ -1703,11 +1703,11 @@ Blockly.Blocks["gauge_title"] = {
 			    "name": "GAUGE_SELECTION",
 			    "options": [
 			      [
-			        "gauge1",
+			        Blockly.Msg.GAUGE_G1,
 			        "G1"
 			      ],
 			      [
-			        "gauge2",
+			        Blockly.Msg.GAUGE_G2,
 			        "G2"
 			      ]
 			    ]
@@ -1741,11 +1741,11 @@ Blockly.Blocks["gauge_unit"] = {
 			    "name": "GAUGE_SELECTION",
 			    "options": [
 			      [
-			        "gauge1",
+			        Blockly.Msg.GAUGE_G1,
 			        "G1"
 			      ],
 			      [
-			        "gauge2",
+			        Blockly.Msg.GAUGE_G2,
 			        "G2"
 			      ]
 			    ]
@@ -1776,11 +1776,11 @@ Blockly.Blocks['gauge_color'] = {
 			    "name": "GAUGE_SELECTION",
 			    "options": [
 			      [
-			        "gauge1",
+			        Blockly.Msg.GAUGE_G1,
 			        "G1"
 			      ],
 			      [
-			        "gauge2",
+			        Blockly.Msg.GAUGE_G2,
 			        "G2"
 			      ]
 			    ]
@@ -1811,11 +1811,11 @@ Blockly.Blocks["gauge_minmax"] = {
 			    "name": "GAUGE_SELECTION",
 			    "options": [
 			      [
-			        "gauge1",
+			        Blockly.Msg.GAUGE_G1,
 			        "G1"
 			      ],
 			      [
-			        "gauge2",
+			        Blockly.Msg.GAUGE_G2,
 			        "G2"
 			      ]
 			    ]
@@ -1858,11 +1858,11 @@ Blockly.Blocks["feed_iot"] = {
 			    "name": "FEED_SELECTION",
 			    "options": [
 			      [
-			        "field1",
+			        Blockly.Msg.FIELD1,
 			        "F1"
 			      ],
 			      [
-			        "field2",
+			        Blockly.Msg.FIELD2,
 			        "F2"
 			      ]
 			    ]
@@ -1903,11 +1903,11 @@ Blockly.Blocks["feed_title"] = {
 			    "name": "FEED_SELECTION",
 			    "options": [
 			      [
-			        "field1",
+			        Blockly.Msg.FIELD1,
 			        "F1"
 			      ],
 			      [
-			        "field2",
+			        Blockly.Msg.FIELD2,
 			        "F2"
 			      ]
 			    ]
@@ -2003,11 +2003,11 @@ Blockly.Blocks['feed_color'] = {
 			    "name": "FEED_SELECTION",
 			    "options": [
 			      [
-			        "field1",
+			        Blockly.Msg.FIELD1,
 			        "F1"
 			      ],
 			      [
-			        "field2",
+			        Blockly.Msg.FIELD2,
 			        "F2"
 			      ]
 			    ]
@@ -2038,11 +2038,11 @@ Blockly.Blocks["feed_minmax"] = {
 			    "name": "FEED_SELECTION",
 			    "options": [
 			      [
-			        "feed1",
+			        Blockly.Msg.FIELD1,
 			        "F1"
 			      ],
 			      [
-			        "feed2",
+			        Blockly.Msg.FIELD2,
 			        "F2"
 			      ]
 			    ]

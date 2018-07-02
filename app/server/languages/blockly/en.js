@@ -747,6 +747,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.GAUGE_TITLE_TITLE = "Config title ";
 /** @export */ Blockly.Msg.GAUGE_TITLE_TOOLTIP = "Send data to config gauge title";
 /** @export */ Blockly.Msg.GAUGE_TITLE_HELPURL = "";
+/** @export */ Blockly.Msg.GAUGE_G1 = "Gauge1";
+/** @export */ Blockly.Msg.GAUGE_G2 = "Gauge2";
 
 // config gauge unit
 /** @export */ Blockly.Msg.GAUGE_UNIT_TITLE = "Config unit";
@@ -779,6 +781,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.FEED_MAIN_TITLE = "Config feed title ";
 /** @export */ Blockly.Msg.FEED_MAIN_TITLE_TOOLTIP = "Send data to config feed title";
 /** @export */ Blockly.Msg.FEED_MAIN_TITLE_HELPURL = "";
+/** @export */ Blockly.Msg.FIELD2 = "Field1";
+/** @export */ Blockly.Msg.FIELD1 = "Field2";
 
 // config feed unit
 /** @export */ Blockly.Msg.FEED_UNIT_TITLE = "Config unit";

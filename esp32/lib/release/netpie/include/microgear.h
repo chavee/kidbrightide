@@ -64,6 +64,7 @@ void mqtt_event_handler(esp_mqtt_event_handle_t event);
 void microgear_init(Microgear *);
 void microgear_connect(Microgear *mg, char *clientid, char *username, char *password);
 int microgear_publish(Microgear *mg, char *topic, char *payload, int len, int qos, int retain);
+int microgear_send(Microgear *mg, char *topic, char *payload);
 
 void microgear_subscribe(Microgear *mg, char *topic, int qos);
 void microgear_unsubscribe(Microgear *mg, char *topic);

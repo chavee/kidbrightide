@@ -735,30 +735,32 @@ Blockly.Msg.CATEGORY_ADVANCE = "ขั้นสูง";
 
 // publish gauge_iot blocks
 /** @export */ Blockly.Msg.GAUGE_IOT_TITLE = "ส่งข้อมูลไปยัง";
-/** @export */ Blockly.Msg.GAUGE_IOT_TOOLTIP = "รับข้อมูลแล้วทำการส่งขึ้นเกทไอโอที";
+/** @export */ Blockly.Msg.GAUGE_IOT_TOOLTIP = "รับข้อมูลแล้วทำการส่งขึ้นมาตรวัดไอโอที";
 /** @export */ Blockly.Msg.GAUGE_IOT_HELPURL = "";
 
 // config gauge title
 /** @export */ Blockly.Msg.MESSAGE_TO = "ของ";
 /** @export */ Blockly.Msg.GAUGE_TITLE_TITLE = "ตั้งค่าชื่อ";
-/** @export */ Blockly.Msg.GAUGE_TITLE_TOOLTIP = "ส่งข้อมูลไปตั้งชื่อเกท";
+/** @export */ Blockly.Msg.GAUGE_TITLE_TOOLTIP = "ส่งข้อมูลไปตั้งชื่อมาตรวัด";
 /** @export */ Blockly.Msg.GAUGE_TITLE_HELPURL = "";
+/** @export */ Blockly.Msg.GAUGE_G1 = "มาตรวัด1";
+/** @export */ Blockly.Msg.GAUGE_G2 = "มาตรวัด2";
 
 // config gauge unit
 /** @export */ Blockly.Msg.GAUGE_UNIT_TITLE = "ตั้งค่าหน่วย";
-/** @export */ Blockly.Msg.GAUGE_UNIT_TOOLTIP = "ส่งข้อมูลไปตั้งค่าหน่วยของเกท";
+/** @export */ Blockly.Msg.GAUGE_UNIT_TOOLTIP = "ส่งข้อมูลไปตั้งค่าหน่วยของมาตรวัด";
 /** @export */ Blockly.Msg.GAUGE_UNIT_HELPURL = "";
 
 // config gauge color
 /** @export */ Blockly.Msg.GAUGE_COLOR_TITLE = "ตั้งค่าสี";
-/** @export */ Blockly.Msg.GAUGE_COLOR_TOOLTIP = "ส่งข้อมูลไปตั้งค่าตั้งค่าสีของเกท";
+/** @export */ Blockly.Msg.GAUGE_COLOR_TOOLTIP = "ส่งข้อมูลไปตั้งค่าตั้งค่าสีของมาตรวัด";
 /** @export */ Blockly.Msg.GAUGE_COLOR_HELPURL = "";
 
 // publish gauge min max blocks
 /** @export */ Blockly.Msg.GAUGE_MINMAX_TITLE = "ตั้งค่าสูงสุดของ";
 /** @export */ Blockly.Msg.GAUGE_MIN_TITLE = "ต่ำสุด :";
 /** @export */ Blockly.Msg.GAUGE_MAX_TITLE = "สูงสุด :";
-/** @export */ Blockly.Msg.GAUGE_MINMAX_TOOLTIP = "ส่งข้อมูลไปตั้งค่าต่ำสุดและค่าสูงสุดของเกท";
+/** @export */ Blockly.Msg.GAUGE_MINMAX_TOOLTIP = "ส่งข้อมูลไปตั้งค่าต่ำสุดและค่าสูงสุดของมาตรวัด";
 /** @export */ Blockly.Msg.GAUGE_MINMAX_HELPURL = "";
 
 // publish feed_iot blocks
@@ -771,6 +773,8 @@ Blockly.Msg.CATEGORY_ADVANCE = "ขั้นสูง";
 /** @export */ Blockly.Msg.FEED_TITLE_TITLE = "ตั้งค่าชื่อ";
 /** @export */ Blockly.Msg.FEED_TITLE_TOOLTIP = "ส่งข้อมูลไปตั้งชื่อฟิว";
 /** @export */ Blockly.Msg.FEED_TITLE_HELPURL = "";
+/** @export */ Blockly.Msg.FIELD1 = "กราฟ1";
+/** @export */ Blockly.Msg.FIELD2 = "กราฟ2";
 
 // config feed main title
 /** @export */ Blockly.Msg.FEED_MAIN_TITLE = "ตั้งค่าชื่อฟีด";

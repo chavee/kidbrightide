@@ -515,7 +515,7 @@ Blockly.JavaScript['advance_current_drain_write'] = function(block) {
 Blockly.JavaScript['gauge_iot'] = function(block) {
 	var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
 	var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
-	var code = 'kbiot_setValue_int("'+ dropdown_gauge_selection +'", '+ argument0 +');\n';
+	var code = 'kbiot_setValue_float("'+ dropdown_gauge_selection +'", '+ argument0 +');\n';
 	return code;
 };
 
@@ -555,7 +555,7 @@ Blockly.JavaScript['gauge_minmax'] = function(block) {
 Blockly.JavaScript['feed_iot'] = function(block) {
 	var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
 	var argument0 = Blockly.JavaScript.valueToCode(block, 'FEED_DATA', Blockly.JavaScript.ORDER_ATOMIC);
-	var code = 'kbiot_writefeed_int(KBSERIAL, "' + dropdown_feed_selection + '",' + argument0 + ');\n';
+	var code = 'kbiot_writeFeed(KBSERIAL, "' + dropdown_feed_selection + '",' + argument0 + ');\n';
 	return code;
 };
 
