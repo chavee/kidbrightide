@@ -390,6 +390,13 @@ function HomeController() {
 					$('#port_checking_li').text(LANG_PORT_CHECKING + '... ' + LANG_PASSED + ' (' + port_name + ')');
 					$('.modal-build .modal-body ul').append('<li id="board_checking_li">' + LANG_BOARD_CHECKING + '...</li>');
 
+					var wifi_ssid = sessionStorage.getItem('wifi-ssid');
+					var wifi_password = sessionStorage.getItem('wifi-password');
+					var enable_iot = sessionStorage.getItem('enable-iot');
+
+					$('.modal-wifi-config input#sta-ssid').val(wifi_ssid);
+					$('.modal-wifi-config input#sta-password').val(wifi_password);
+					$('.modal-wifi-config #wifi-iot-checkbox').val(enable_iot);
 					$.ajax({
 						url: '/read_mac',
 						type: 'POST',
@@ -413,9 +420,9 @@ function HomeController() {
 									mac_addr: mac_addr,
 									code: b64EncodeUnicode(code_str),
 									// NETPIE Config Data
-									sta_ssid: $('.modal-wifi-config input#sta-ssid').val(),
-									sta_password: $('.modal-wifi-config input#sta-password').val(),
-									enable_iot: $('.modal-wifi-config #wifi-iot-checkbox').prop('checked'),
+									sta_ssid: wifi_ssid,
+									sta_password: wifi_password,
+									enable_iot: enable_iot,
 								},
 								dataType: 'json',
 								error: function(e) {
@@ -553,10 +560,32 @@ function HomeController() {
 	// =========================================================================
 	// set wifi connection modal form
 	// =========================================================================
+	$('#wifi-build-ok').click(function(){
+		if (typeof(sessionStorage.getItem('wifi-ssid')) !== 'undefined'){
+			sessionStorage.setItem('wifi-ssid', $('.modal-wifi-config input#sta-ssid').val());
+		}
+		if (typeof(sessionStorage.getItem('wifi-password')) !== 'undefined'){
+			sessionStorage.setItem('wifi-password', $('.modal-wifi-config input#sta-password').val());
+		}
+		if (typeof(sessionStorage.getItem('enable-iot')) !== 'undefined'){
+			if ($('.modal-wifi-config #wifi-iot-checkbox').prop('checked') == false){
+				sessionStorage.setItem('enable-iot', false);
+			}
+			else{
+				sessionStorage.setItem('enable-iot', true);
+			}
+		}
+	});
 	$('#btn-wifi-config').click(function() {
 		$('.modal-wifi-config #wifi-iot-text').text(LANG_IOT_MODE);
-		// $('.modal-wifi-config input#wifi-iot-checkbox').prop('checked', false);
-
+		$('.modal-wifi-config input#sta-ssid').val(sessionStorage.getItem('wifi-ssid'));
+		$('.modal-wifi-config input#sta-password').val(sessionStorage.getItem('wifi-password'));
+		if (sessionStorage.getItem('enable-iot') == false){
+			$('.modal-wifi-config #wifi-iot-checkbox').prop('checked', false);
+		}
+		else{
+			$('.modal-wifi-config #wifi-iot-checkbox').prop('checked', true);
+		}
 		$('.modal-wifi-config.modal').modal({
 			show: true,
 			keyboard: false,
@@ -570,7 +599,7 @@ function HomeController() {
 		Blockly.JavaScript.resetTaskNumber();
 		$('.modal-qrcode .modal-body').text('');
 		$('img #qrcode-img').remove();
-		// $('.modal-qrcode .modal-body').append('<li id="board_checking_li">' + LANG_BOARD_CHECKING + '...</li>');
+		$('.modal-qrcode .modal-body').append('<li id="board_checking_li">' + LANG_QR_CHECKING + '</li>');
 		$.ajax({
 			url: '/port_list',
 			type: 'POST',

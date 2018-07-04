@@ -21,6 +21,7 @@ void kbiot_init(char* kbserial, char *clientid, char *username, char *password);
 void kbiot_setValue_int(char *target, int value);
 void kbiot_setValue_str(char *target, char *value);
 void kbiot_writeFeed(char *feedid, char *key, float value);
+void kbiot_setValue_float(char *target, float value);
 void kbiot_setConfig(char *target, char *data);
 void set_B1release();
 void set_B2release();
