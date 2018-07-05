@@ -293,7 +293,7 @@ Blockly.JavaScript['wait_sw1_released'] = function(block) {
 };
 
 Blockly.JavaScript['wait_sw2_pressed'] = function(block) {
-	var code = 'while(1){if ((get_B2state() == 1 ) || (get_B2state() == 2 ) || button12.is_sw2_pressed()){if(get_B2state() == 2){set_B1release();} break;}}\n';
+	var code = 'while(1){if ((get_B2state() == 1 ) || (get_B2state() == 2 ) || button12.is_sw2_pressed()){if(get_B2state() == 2){set_B2release();} break;}}\n';
 	// return 'button12.wait_sw2_pressed();\n';
 	return code;
 };
