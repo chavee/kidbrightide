@@ -50,7 +50,17 @@ gulp.task('decompress_esptool', ['download_esptool'], () => {
         .pipe(gulp.dest(__dirname))
 })
 
-gulp.task('decompress_xtensa', ['decompress_esptool'], () => {
+gulp.task('chmod_linux', ['decompress_esptool'], () => {
+    if (process.platform == 'linux') {
+        return gulp.src(__dirname)
+            .pipe(exec('chmod 755 espytool.py'))
+    } 
+    else {
+        return
+    }
+})
+
+gulp.task('decompress_xtensa', ['chmod_linux'], () => {
     if (fs.existsSync(pathl)) {
         return
     }
