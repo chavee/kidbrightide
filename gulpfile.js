@@ -5,6 +5,7 @@ const decompress = require('gulp-decompress')
 const del = require('del')
 const install = require("gulp-install")
 const child_process = require('child_process')
+const exec = require('gulp-exec');
 const fs = require('fs')
 
 // build
