@@ -226,19 +226,19 @@ Blockly.JavaScript['logic_led16x8_scroll_ready'] = function(block) {
 }
 
 Blockly.JavaScript['logic_sw1_pressed'] = function(block) {
-	return ['get_B1stateClicked() || button12.is_sw1_pressed()', Blockly.JavaScript.ORDER_ATOMIC];
+	return ['button12.is_sw1_pressed()', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['logic_sw1_released'] = function(block) {
-	return ['(get_B1state() == 0 ) || button12.is_sw1_released()', Blockly.JavaScript.ORDER_ATOMIC];
+	return ['button12.is_sw1_released()', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['logic_sw2_pressed'] = function(block) {
-	return ['get_B2stateClicked() || button12.is_sw2_pressed()', Blockly.JavaScript.ORDER_ATOMIC];
+	return ['button12.is_sw2_pressed()', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 Blockly.JavaScript['logic_sw2_released'] = function(block) {
-	return ['(get_B2state() == 0 ) || button12.is_sw2_released()', Blockly.JavaScript.ORDER_ATOMIC];
+	return ['button12.is_sw2_released()', Blockly.JavaScript.ORDER_ATOMIC];
 }
 
 // =============================================================================
@@ -281,27 +281,19 @@ Blockly.JavaScript['wait_led_matrix_ready'] = function(block) {
 };
 
 Blockly.JavaScript['wait_sw1_pressed'] = function(block) {
-	var code = 'while(1){if ((get_B1state() == 1 ) || (get_B1state() == 2 ) || button12.is_sw1_pressed()){if(get_B1state() == 2){set_B1release();} break;}}\n';
-	// button12.wait_sw1_pressed();\n
-	return code;
+	return 'button12.wait_sw1_pressed();\n';
 };
 
 Blockly.JavaScript['wait_sw1_released'] = function(block) {
-	var code = 'while(1){if ((get_B1state() == 0 ) || button12.is_sw1_released()){break;}}\n';
-	// return 'button12.wait_sw1_released();\n';
-	return code;
+	return 'button12.wait_sw1_released();\n';
 };
 
 Blockly.JavaScript['wait_sw2_pressed'] = function(block) {
-	var code = 'while(1){if ((get_B2state() == 1 ) || (get_B2state() == 2 ) || button12.is_sw2_pressed()){if(get_B2state() == 2){set_B2release();} break;}}\n';
-	// return 'button12.wait_sw2_pressed();\n';
-	return code;
+	return 'button12.wait_sw2_pressed();\n';
 };
 
 Blockly.JavaScript['wait_sw2_released'] = function(block) {
-	var code = 'while(1){if ((get_B2state() == 0 ) || button12.is_sw2_released()){break;}}\n';
-	// return 'button12.wait_sw2_released();\n';
-	return code;
+	return 'button12.wait_sw2_released();\n';
 };
 
 // =============================================================================
@@ -362,15 +354,15 @@ Blockly.JavaScript['sensor_ldr'] = function(block) {
 };
 
 Blockly.JavaScript['sensor_switch1'] = function(block) {
-	return [ '((int)get_B1stateClicked() || button12.sw1_get())',
-		// 'button12.sw1_get()',
+	return [
+		'button12.sw1_get()',
 		Blockly.JavaScript.ORDER_ATOMIC
 	];
 };
 
 Blockly.JavaScript['sensor_switch2'] = function(block) {
-	return [ '((int)get_B2stateClicked() || button12.sw2_get())',
-		// 'button12.sw2_get()',
+	return [
+		'button12.sw2_get()',
 		Blockly.JavaScript.ORDER_ATOMIC
 	];
 };
@@ -512,89 +504,3 @@ Blockly.JavaScript['advance_current_drain_write'] = function(block) {
 	return ret;
 };
 */
-Blockly.JavaScript['gauge_iot'] = function(block) {
-	var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
-	var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
-	var code = 'kbiot_setValue_float("'+ dropdown_gauge_selection +'", '+ argument0 +');\n';
-	return code;
-};
-
-Blockly.JavaScript['gauge_title'] = function(block) {
-  var text_title = block.getFieldValue('TITLE');
-  var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_gauge_selection +'","data":"' + '\\"ti\\":\\"' + text_title + '\\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['gauge_unit'] = function(block) {
-  var text_title = block.getFieldValue('UNIT');
-  var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_gauge_selection +'","data":"' + '\\"u\\":\\"' + text_title + '\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['gauge_color'] = function(block) {
-  var color = block.getFieldValue('COLOR');
-  var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_gauge_selection +'","data":"' + '\\"clr\\":\\"' + color + '\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['gauge_minmax'] = function(block) {
-  var number_min_value = 0; //block.getFieldValue('MIN_VALUE');
-  var number_max_value = block.getFieldValue('MAX_VALUE');
-  var dropdown_gauge_selection = block.getFieldValue('GAUGE_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_gauge_selection +'","data":"' + '\\"min\\":\\"' + number_min_value + '\\",\\"max\\":\\"' + number_max_value  +'\\""}\n';
-  return code;
-};
-
-Blockly.JavaScript['feed_iot'] = function(block) {
-	var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
-	var argument0 = Blockly.JavaScript.valueToCode(block, 'FEED_DATA', Blockly.JavaScript.ORDER_ATOMIC);
-	var code = 'kbiot_writeFeed(KBSERIAL, "' + dropdown_feed_selection + '",' + argument0 + ');\n';
-	return code;
-};
-
-Blockly.JavaScript['feed_title'] = function(block) {
-  var text_title = block.getFieldValue('TITLE');
-  var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_feed_selection +'","data":"' + '\\"ti\\":\\"' + text_title + '\\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['feed_main_title'] = function(block) {
-  var text_title = block.getFieldValue('TITLE');
-
-  var code = 'IOT_CONFIG{"topic":"F","data":"' + '\\"ti\\":\\"' + text_title + '\\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['feed_unit'] = function(block) {
-  var text_title = block.getFieldValue('UNIT');
-  var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_feed_selection +'","data":"' + '\\"u\\":\\"' + text_title + '\\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['feed_color'] = function(block) {
-  var color = block.getFieldValue('COLOR');
-  var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_feed_selection +'","data":"' + '\\"clr\\":\\"' + color + '\\\"' +'"}\n';
-  return code;
-};
-
-Blockly.JavaScript['feed_minmax'] = function(block) {
-  var number_min_value = block.getFieldValue('MIN_VALUE');
-  var number_max_value = block.getFieldValue('MAX_VALUE');
-  var dropdown_feed_selection = block.getFieldValue('FEED_SELECTION');
-
-  var code = 'IOT_CONFIG{"topic":"'+ dropdown_feed_selection +'","data":"' + '\\"min\\":\\"' + number_min_value + '\\",\\"max\\":\\"' + number_max_value  +'\\""}\n';
-  return code;
-};

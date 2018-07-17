@@ -13,13 +13,9 @@ block content
 				li
 					button#btn-delete.btn.btn-default.navbar-btn Delete File
 				li
-					button#btn-build.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Program Build
+					button#btn-build.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 40px") Program Build
 				li
-					button#btn-setclock.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Set Clock
-				li
-					button#btn-wifi-config.btn.btn-default.navbar-btn WIFI Config
-				li
-					button#btn-qrcode.btn.btn-default.navbar-btn QR Code
+					button#btn-setclock.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 40px") Set Clock
 			ul.nav.navbar-nav.navbar-right
 				li
 					.lang-container
@@ -50,8 +46,6 @@ block content
 	include modals/delete-confirm
 	include modals/set-clock
 	include modals/setting-clock
-	include modals/wifi-config
-	include modals/qrcode
 
 block scripts
 	script(src='/vendor/jquery-2.2.3.min.js')

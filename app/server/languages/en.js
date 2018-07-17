@@ -122,7 +122,3 @@ const LANG_DO_NOT_TURN_OFF_YOUR_DEVICE = 'Please do not turn off device while Bo
 const LANG_UNDER_DEVELOPMENT = 'Under Development';
 
 const LANG_INSERT_MODE = 'Insert Mode';
-const LANG_WIFI_CONFIG = 'WIFI Config';
-const LANG_IOT_MODE = "Enable IOT";
-const LANG_QRCODE = "QR Code";
-const LANG_QR_CHECKING = "Scan QR Code to get board's mac address.";

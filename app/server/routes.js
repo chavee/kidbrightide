@@ -4,8 +4,6 @@ const util = require('util');
 const exec = require('child_process').exec;
 const moment = require('moment');
 const SerialPort = require('serialport');
-const QRCode = require('qrcode');
-const md5 = require('md5');
 
 module.exports = function(app, Config, Log) {
 	const server_dir = __dirname;
@@ -306,80 +304,9 @@ module.exports = function(app, Config, Log) {
 		}
 	});
 
-	var iot_config = [];
-	var topics = [];
-	var config_flag = false;
-	var iot_code = '';
-	function gen_iot_code(setup_code, current_setup_code){
-		var trim_code = current_setup_code.trim();
-		if (trim_code.substring(0, 10) == 'IOT_CONFIG'){
-			config_flag = true;
-			var current_line = JSON.parse(
-				trim_code.substring(10, trim_code.length));
-			iot_config.push(current_line);
-
-			if (topics.indexOf(current_line['topic']) == -1) {
-				topics.push(current_line['topic']);
-			}
-		}
-		else {
-			config_flag = false;
-		}
-		if ((config_flag == false) && (iot_config.length != 0)){
-			for (topics_index in topics){
-				var filtered_data = iot_config.filter(a=>a.topic==topics[topics_index]);
-				if (topics_index == 0){
-					iot_code += '{\\"' + topics[topics_index] + '\\":{';
-				}
-				else {
-					iot_code += '},\\"' + topics[topics_index] + '\\":{';
-				}
-				for (data_index in filtered_data){
-					if (data_index != 0){
-						iot_code += ',';
-					}
-					iot_code += filtered_data[data_index]['data'].replace(/"/g, '\\"');
-				}
-				if (topics_index == topics.length-1){
-					iot_code += '}';
-				}
-			}
-			iot_code += '}'
-			setup_code += '  ' + 'kbiot_setConfig("CFG", "'+ iot_code +'");\n';
-			setup_code += '  ' + current_setup_code + '\n';
-			topics = [];
-			iot_config = [];
-			iot_code = '';
-		}
-		else if (config_flag == false){
-			setup_code += '  ' + current_setup_code + '\n';
-		}
-		return setup_code;
-	}
-
 	app.post('/build', function(req, res) {
 		var board_id = req.body['board_id'];
 		var mac_addr = req.body['mac_addr'];
-		var kbmac_addr = (mac_addr.replace(/:/g, "")).toUpperCase();
-		var md5_mac_addr = md5("K:" + kbmac_addr);
-		// console.log('=== ' + kbmac_addr);
-		// console.log(md5_mac_addr);
-
-		var sta_ssid = req.body['sta_ssid'];
-		var sta_password = req.body['sta_password'];
-		var enable_iot = req.body['enable_iot'];
-		var start_wifi_code = '';
-		var start_iot_code = '';
-
-		if (sta_ssid !== '') {
-			if (sta_password !== '') {
-				// set wifi and enable wifi
-				start_wifi_code = 'wifi_sta_start(CONFIG_WIFI_SSID, CONFIG_WIFI_PASSWORD);\n';
-				if (enable_iot == 'true') {
-					start_iot_code = 'kbiot_init(KBSERIAL, CLIENTID, USERNAME, PASSWORD);\n\n';
-				}
-			}
-		}
 
 		Log.i('building board id ' + board_id + ' (' + mac_addr + ')');
 		/*if ((board_id == '') || (board_id.length != 6)) {
@@ -428,8 +355,7 @@ module.exports = function(app, Config, Log) {
 				braces_cnt = braces_cnt + open_brace_cnt - close_brace_cnt;
 
 				if (in_func_flag) {
-					task_code = gen_iot_code(task_code, line); + '\n'; // generate iot code
-					// task_code += (line + '\n');
+					task_code += (line + '\n');
 					if (braces_cnt == 0) {
 						in_func_flag = false;
 					}
@@ -442,8 +368,7 @@ module.exports = function(app, Config, Log) {
 			var setup_code_list = setup_code.split('\n');
 			setup_code = '';
 			for (var setup_code_index in setup_code_list) {
-				setup_code = gen_iot_code(setup_code, setup_code_list[setup_code_index]); // generate iot code
-				// setup_code += '  ' + setup_code_list[setup_code_index] + '\n';
+				setup_code += '  ' + setup_code_list[setup_code_index] + '\n';
 			}
 
 			var task_fn_code = '  // create tasks\n';
@@ -469,17 +394,6 @@ module.exports = function(app, Config, Log) {
 				'#include "ht16k33.h"\n' +
 				'#include "lm73.h"\n' +
 				'#include "mcp7940n.h"\n\n' +
-				// kbiot
-				'#include "nvs_flash.h"\n' +
-				'#include "wificontroller.h"\n' +
-				'#include "kbiot.h"\n\n' +
-				'#define KBSERIAL "' + kbmac_addr + '"\n' +
-				'#define CLIENTID "' + kbmac_addr + '"\n' +
-				'#define USERNAME "' + md5_mac_addr + '"\n' +
-				'#define PASSWORD ""\n' +
-				'#define CONFIG_WIFI_SSID "' + sta_ssid + '"\n' +
-				'#define CONFIG_WIFI_PASSWORD "' + sta_password + '"\n\n' +
-				// ===
 				'extern PORTS ports;\n' +
 				'extern BUTTON12 button12;\n' +
 				'extern LDR ldr;\n' +
@@ -491,8 +405,6 @@ module.exports = function(app, Config, Log) {
 				var_str +
 				task_code + '\n' +
 				'void user_app(void) {\n' +
-				start_wifi_code +
-				start_iot_code +
 				setup_code +
 				task_fn_code +
 				'}\n';
@@ -632,23 +544,5 @@ module.exports = function(app, Config, Log) {
 				result: 'error'
 			}));
 		}
-	});
-
-	app.post('/gen_qr', function(req, res) {
-		var path = './app/public/images/qrcode.png';
-		var mac_addr = req.body['mac_addr'];
-		QRCode.toFile(path, mac_addr, {
-		  color: {
-		    dark: '#000', // Blue modules
-		    light: '#0000' // Transparent background
-		  }
-		}, function (err) {
-		  if (err) throw err;
-		  res.setHeader('Content-Type', 'application/json');
-		  res.status(200);
-		  res.send(JSON.stringify({
-			  result: 'ok'
-		  }));
-	  });
 	});
 };
