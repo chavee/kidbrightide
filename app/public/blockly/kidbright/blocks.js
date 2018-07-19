@@ -1430,7 +1430,7 @@ Blockly.Blocks["output_write"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.OUTPUT_WRITE_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.OUTPUT_WRITE_HELPURL);
 	}
@@ -1449,7 +1449,7 @@ Blockly.Blocks["output_toggle"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.OUTPUT_TOGGLE_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.OUTPUT_TOGGLE_HELPURL);
 	}
@@ -1468,7 +1468,7 @@ Blockly.Blocks["output_read"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(null);
 		this.setNextStatement(null);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.OUTPUT_READ_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.OUTPUT_READ_HELPURL);
 	}
@@ -1487,7 +1487,7 @@ Blockly.Blocks["usbsw_write"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.USBSW_WRITE_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.USBSW_WRITE_HELPURL);
 	}
@@ -1501,7 +1501,7 @@ Blockly.Blocks["usbsw_toggle"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.USBSW_TOGGLE_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.USBSW_TOGGLE_HELPURL);
 	}
@@ -1516,7 +1516,7 @@ Blockly.Blocks["usbsw_read"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(null);
 		this.setNextStatement(null);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.USBSW_READ_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.USBSW_READ_HELPURL);
 	}
@@ -1537,7 +1537,7 @@ Blockly.Blocks["input_read"] = {
 		this.setInputsInline(true);
 		this.setPreviousStatement(null);
 		this.setNextStatement(null);
-		this.setColour(330);
+		this.setColour(19);
 		this.setTooltip(Blockly.Msg.INPUT_READ_TOOLTIP);
 		this.setHelpUrl(Blockly.Msg.INPUT_READ_HELPURL);
 	}
