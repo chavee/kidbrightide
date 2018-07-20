@@ -82,6 +82,8 @@ gulp.task('install', ['del'], () => {
 })
 
 gulp.task('build', ['install'], () => {
+    console.log('Build Complete ...')
+    console.log('Start index.js')
     return child_process.execSync('node index.js')
 })
 

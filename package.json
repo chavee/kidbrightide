@@ -14,6 +14,7 @@
     "gulp": "^3.9.1"
   },
   "scripts": {
+    "start": "node index.js",
     "build": "npm install gulp && gulp build",
     "clean": "gulp clean",
     "rebuild": "gulp clean && npm install gulp && gulp build",
