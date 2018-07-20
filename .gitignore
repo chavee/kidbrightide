@@ -5,3 +5,5 @@ esptool
 esptool.py
 esptool.exe
 app/public/images/qrcode.png
+esp32/build/
+data/
