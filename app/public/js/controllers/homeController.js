@@ -17,7 +17,6 @@ function HomeController() {
 	$('#btn-update').prop('disabled', false);
 	$('#btn-wifi-config').prop('disable', false);
 
-
 	// check standalone flag
 	$.ajax({
 		url: '/standalone',
@@ -142,23 +141,6 @@ function HomeController() {
 	$('.modal-delete-confirm #btn-ok').click(function() {
 		deleteFile($('.modal-delete-file-browser #file-text').val());
 	});
-
-	this.showLockedAlert = function(msg) {
-		$('.modal-alert').modal({
-			show: false,
-			keyboard: false,
-			backdrop: 'static'
-		});
-		$('.modal-alert .modal-header h4').text('Success!');
-		$('.modal-alert .modal-body p').html(msg);
-		$('.modal-alert').modal('show');
-		$('.modal-alert button').click(function() {
-			window.location.href = '/';
-		});
-		setTimeout(function() {
-			window.location.href = '/';
-		}, 3000);
-	}
 
 	function alertError(e) {
 		if (parseInt(e.responseText) < LANG_ERROR_CODE.length) {
@@ -286,10 +268,6 @@ function HomeController() {
 					var item = file_list[i];
 					$('.modal-open-file-browser #file-list').append('<a class="list-group-item">' + item.filename + '</a>');
 				}
-
-				$('.modal-open-file-browser .modal-body .list-group .list-group-item').click(function(e) {
-					$('.modal-open-file-browser #file-text').val($(e.target).text());
-				});
 
 				$('.modal-open-file-browser .modal-body .list-group .list-group-item').click(function(e) {
 					if ($(e.target).hasClass('disabled')) {

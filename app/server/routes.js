@@ -473,12 +473,12 @@ module.exports = function(app, Config, Log) {
 				'#include "nvs_flash.h"\n' +
 				'#include "wificontroller.h"\n' +
 				'#include "kbiot.h"\n\n' +
-				'#define KBSERIAL "' + kbmac_addr + '"\n' + // "/30AEA47F2988"\n' +
-				'#define CLIENTID "' + kbmac_addr + '"\n' + // "iuwY9jf0eAHA379d"\n' +
-				'#define USERNAME "' + md5_mac_addr + '"\n' + // "PCm14heuToCyaOv%1529397480"\n' +
-				'#define PASSWORD ""\n' +  // "SlVXtw0DLwfPQGVcprlxeuRSHoA="\n\n' +
-				'#define CONFIG_WIFI_SSID "' + sta_ssid + '"\n' +  // catbus
-				'#define CONFIG_WIFI_PASSWORD "' + sta_password + '"\n\n' + // stud2559
+				'#define KBSERIAL "' + kbmac_addr + '"\n' +
+				'#define CLIENTID "' + kbmac_addr + '"\n' +
+				'#define USERNAME "' + md5_mac_addr + '"\n' +
+				'#define PASSWORD ""\n' +
+				'#define CONFIG_WIFI_SSID "' + sta_ssid + '"\n' +
+				'#define CONFIG_WIFI_PASSWORD "' + sta_password + '"\n\n' +
 				// ===
 				'extern PORTS ports;\n' +
 				'extern BUTTON12 button12;\n' +
@@ -500,12 +500,7 @@ module.exports = function(app, Config, Log) {
 			try {
 				// create build directory
 				var board_name = mac_addr.replace(/:/g, '-');
-				var build_dir = Config.process_dir + '/esp32/build';
-				var user_app_dir = build_dir + '/' + board_name;
-
-				if (!fs.existsSync(build_dir)) {
-					fs.mkdirSync(build_dir);
-				}
+				var user_app_dir = Config.process_dir + '/esp32/build/' + board_name;
 
 				if (!fs.existsSync(user_app_dir)) {
 					fs.mkdirSync(user_app_dir);

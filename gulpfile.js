@@ -54,7 +54,7 @@ gulp.task('decompress_esptool', ['download_esptool'], () => {
 gulp.task('chmod_linux', ['decompress_esptool'], () => {
     if (process.platform == 'linux') {
         return gulp.src(__dirname)
-            .pipe(exec('chmod 755 espytool.py'))
+            .pipe(exec('chmod 755 esptool.py'))
     } 
     else {
         return
