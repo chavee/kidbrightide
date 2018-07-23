@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const jade = require('jade');
 const Log = require('./log');
 const Config = require('./config.json');
-const version = '1.2';
+const version = '1.22';
 
 module.exports = {
 	init: function(process_dir, snapshot_flag) {
