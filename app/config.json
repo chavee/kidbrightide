@@ -1,0 +1,20 @@
+{
+	"packages": "moment body-parser cookie-parser express jade serve-static rimraf decompress-zip jaguar serialport",
+	"standalone": true,
+	"server_timezone": 7.0,
+	"webserver": {
+		"port": 8000
+	},
+	"ide": {
+		"data_dir": "data",
+		"port_vid_pid": [
+			"04b4:0003",
+			"0403:6015"
+		]
+	},
+	"log": {
+		"info": true,
+		"error": true,
+		"debug": true
+	}
+}

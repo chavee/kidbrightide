@@ -1,0 +1,32 @@
+{
+  "name": "kidbrightide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-decompress": "^2.0.2",
+    "gulp-download": "0.0.1",
+    "gulp-exec": "^3.0.2",
+    "gulp-install": "^1.1.0"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "build": "npm install gulp && gulp build && node index.js",
+    "clean": "gulp clean",
+    "rebuild": "gulp clean && npm install gulp && gulp build && node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexpie/kidbrightide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nexpie/kidbrightide/issues"
+  },
+  "homepage": "https://github.com/nexpie/kidbrightide#readme"
+}

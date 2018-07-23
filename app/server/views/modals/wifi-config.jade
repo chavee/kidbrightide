@@ -1,0 +1,17 @@
+.modal-wifi-config.modal.fade
+    .modal-dialog
+        .modal-content
+            .modal-header
+                //button.close(data-dismiss='modal') x
+                h4
+            .modal-body
+                label SSID
+                input#sta-ssid.form-control(type="text")
+                label Password
+                input#sta-password.form-control(type="password")
+                label
+                input(type="checkbox")#wifi-iot-checkbox
+                div(style="display: inline;vertical-align: middle")#wifi-iot-text Insert Mode
+            .modal-footer
+                button#btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
+                button(data-dismiss="modal")#wifi-build-ok.btn.btn-primary OK
