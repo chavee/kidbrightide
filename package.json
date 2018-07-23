@@ -15,9 +15,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "npm install gulp && gulp build",
+    "build": "npm install gulp && gulp build && node index.js",
     "clean": "gulp clean",
-    "rebuild": "gulp clean && npm install gulp && gulp build",
+    "rebuild": "gulp clean && npm install gulp && gulp build && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
