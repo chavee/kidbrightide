@@ -82,7 +82,7 @@ gulp.task('install', ['del'], () => {
 })
 
 gulp.task('build', ['install'], () => {
-    return child_process.execSync('node index.js')
+    return 
 })
 
 gulp.task('clean', () => {
