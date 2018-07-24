@@ -14,7 +14,7 @@ const pathk = path.join(__dirname, 'archive', 'kidbright32.json')
 const pathz = path.join(__dirname, '*.{tar,tar.bz2,tar.gz,zip}')
 var pathl, pathe
 var pathnl, pathne, pathnlt, pathnet
-
+ 
 // clean
 const pathcx = path.join(__dirname, 'xtensa-esp32-elf')
 const pathca = path.join(__dirname, 'app', 'node_modules')
