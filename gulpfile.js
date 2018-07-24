@@ -20,7 +20,12 @@ const pathcx = path.join(__dirname, 'xtensa-esp32-elf')
 const pathca = path.join(__dirname, 'app', 'node_modules')
 const pathcc = path.join(__dirname, 'node_modules')
 
-gulp.task('download_xtensa', () => {
+gulp.task('install', () => {
+    return gulp.src([patha, pathc])
+        .pipe(install());
+})
+
+gulp.task('download_xtensa', ['install'], () => {
     var json = JSON.parse(fs.readFileSync(pathk))
     for (var i = 0; i < json.packages.length; i++) {
         if (process.platform == json.packages[i].platform) {
@@ -81,12 +86,7 @@ gulp.task('del', ['chmod_linux'], () => {
     return del([pathz])
 })
 
-gulp.task('install', ['del'], () => {
-    return gulp.src([patha, pathc])
-        .pipe(install());
-})
-
-gulp.task('build', ['install'], () => {
+gulp.task('build', ['del'], () => {
     return
 })
 
