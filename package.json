@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "gulp-decompress": "^2.0.2",
     "gulp-download": "0.0.1",
     "gulp-exec": "^3.0.2",
     "gulp-install": "^1.1.0"
@@ -15,7 +14,6 @@
   },
   "scripts": {
     "build": "npm install gulp && gulp build && node index.js",
-    "clean": "gulp clean",
     "rebuild": "gulp clean && npm install gulp && gulp build && node index.js",
     "start": "node index.js"
   },
