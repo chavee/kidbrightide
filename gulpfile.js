@@ -32,6 +32,7 @@ gulp.task('download_xtensa', ['install'], () => {
             pathl = json.packages[i].items[0].download_url
             pathnl = pathl.split("dl/")[1]
             pathnlt = pathnl.split('.gz')[0]
+            console.log(pathnlt);
             pathe = json.packages[i].items[1].download_url
             if (process.platform == 'win32' || process.platform == 'darwin') {
                 pathne = pathe.split("dl/")[1]
@@ -59,11 +60,15 @@ gulp.task('decompress', ['download_esptool'], () => {
         return
     }
     else {
-        if (process.platform == 'linux' || process.platform == 'darwin') {
+        if (process.platform == 'darwin') {
             return gulp.src(__dirname)
                 .pipe(exec('gunzip *.gz'))
                 .pipe(exec('tar xvf ' + pathnlt))
                 .pipe(exec('tar xvf ' + pathnet))
+        } else if (process.platform == 'linux') {
+            return gulp.src(__dirname)
+                .pipe(exec('gunzip *.gz'))
+                .pipe(exec('tar xvf ' + pathnlt))
         } else if (process.platform == 'win32') {
             return gulp.src(__dirname)
                 .pipe(exec("powershell.exe -NoP -NonI -Command " + "Expand-Archive '"+ pathnl + "' '.'"))
