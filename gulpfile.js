@@ -61,8 +61,8 @@ gulp.task('decompress', ['download_esptool'], () => {
                 .pipe(exec('tar xvf ' + pathnet))
         } else if (process.platform == 'win32') {
             return gulp.src(__dirname)
-                .pipe(exec("powershell.exe -NoP -NonI -Command " + "Expand-Archive '"+ pathnl + "'"))
-                .pipe(exec("powershell.exe -NoP -NonI -Command " + "Expand-Archive '"+ pathne + "'"))
+                .pipe(exec("powershell.exe -NoP -NonI -Command " + "Expand-Archive '"+ pathnl + "' '.'"))
+                .pipe(exec("powershell.exe -NoP -NonI -Command " + "Expand-Archive '"+ pathne + "' '.'"))
         }
     }
 })
