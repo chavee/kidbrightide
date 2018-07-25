@@ -1,10 +1,17 @@
 # kidbrightide
 
-installation
+ความต้องการ
+- node.js 8
+
+วิธีติดตั้ง
 
 ```
-cd app
-npm install
-cd ..
+git clone https://github.com/nexpie/kidbrightide
+cd kidbrightide
 npm run build
+```
+
+การรันโปรแกรมใช้คำสั่ง
+```
+npm start
 ```
