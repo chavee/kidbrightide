@@ -1,14 +1,17 @@
 # kidbrightide
 
-installation
+ความต้องการ
+- node.js 8
+
+วิธีติดตั้ง
 
 ```
-cd app
-npm install
-cd ..
+git clone https://github.com/nexpie/kidbrightide
+cd kidbrightide
 npm run build
 ```
 
-# Windows
-Have problem in libidf_test.a when clone this project
-But can use normally when download this project with zip
+การรันโปรแกรมใช้คำสั่ง
+```
+npm start
+```
