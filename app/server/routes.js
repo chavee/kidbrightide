@@ -361,7 +361,7 @@ module.exports = function(app, Config, Log) {
 		var board_id = req.body['board_id'];
 		var mac_addr = req.body['mac_addr'];
 		var kbmac_addr = (mac_addr.replace(/:/g, "")).toUpperCase();
-		var md5_mac_addr = md5(kbmac_addr);
+		var md5_mac_addr = md5('K:'+kbmac_addr);
 
 		// console.log('=== ' + kbmac_addr);
 		// console.log(md5_mac_addr);
