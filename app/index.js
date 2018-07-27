@@ -1,12 +1,13 @@
 const fs = require('fs');
 const http = require('http');
 const express = require('express');
+const nocache = require('nocache');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const jade = require('jade');
 const Log = require('./log');
 const Config = require('./config.json');
-const version = '1.22';
+const version = '1.23';
 
 module.exports = {
 	init: function(process_dir, snapshot_flag) {
@@ -44,7 +45,9 @@ module.exports = {
 			limit: '50mb'
 		}));
 
+		app.use(nocache());
 		app.use(express.static(__dirname + '/public'));
+
 		require(__dirname + '/server/routes.js')(app, Config, Log);
 
 		http.createServer(app).listen(Config.webserver.port, function() {
