@@ -361,7 +361,8 @@ module.exports = function(app, Config, Log) {
 		var board_id = req.body['board_id'];
 		var mac_addr = req.body['mac_addr'];
 		var kbmac_addr = (mac_addr.replace(/:/g, "")).toUpperCase();
-		var md5_mac_addr = md5("K:" + kbmac_addr);
+		var md5_mac_addr = md5('K:'+kbmac_addr);
+
 		// console.log('=== ' + kbmac_addr);
 		// console.log(md5_mac_addr);
 
@@ -500,11 +501,16 @@ module.exports = function(app, Config, Log) {
 			try {
 				// create build directory
 				var board_name = mac_addr.replace(/:/g, '-');
-				var user_app_dir = Config.process_dir + '/esp32/build/' + board_name;
+				var build_dir = Config.process_dir + '/esp32/build';
+				var user_app_dir = build_dir + '/' + board_name;
 
+				if (!fs.existsSync(build_dir)) {
+					fs.mkdirSync(build_dir);
+				}
 				if (!fs.existsSync(user_app_dir)) {
 					fs.mkdirSync(user_app_dir);
 				}
+
 				// save to file
 				fs.writeFile(user_app_dir + '/user_app.cpp', user_app_code, (err) => {
 					if (err) throw err;
