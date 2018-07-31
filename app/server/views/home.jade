@@ -4,22 +4,22 @@ block content
 	nav.navbar-default.header
 		.container
 			ul.nav.navbar-nav
-				img(src="/images/kidbright-logo_text_top.png", height="24").kb_logo_top
+				img(src="/images/SVG/Logo.svg", height="60").kb_logo_top
 			ul.nav.navbar-nav(style="padding-left: 10px")
 				li
-					button#btn-open.btn.btn-default.navbar-btn Open File
+					button#btn-open.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h3.svg)")
 				li
-					button#btn-save.btn.btn-default.navbar-btn Save File
+					button#btn-save.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h4.svg)") Save Files
 				li
-					button#btn-delete.btn.btn-default.navbar-btn Delete File
+					button#btn-delete.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h2.svg)") Delete File
 				li
-					button#btn-build.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Program Build
+					button#btn-build.navbar-btn(disabled="true").btn-icon(style="background-image: url(/images/SVG/h1.svg)") Program Build
 				li
-					button#btn-setclock.btn.btn-default.navbar-btn(disabled="true",style="margin-left: 20px") Set Clock
+					button#btn-setclock.setclock-btn.navbar-btn(disabled="true").btn-icon(style="background-image: url(/images/SVG/h6.svg)") Set Clock
 				li
-					button#btn-wifi-config.btn.btn-default.navbar-btn WIFI Config
+					button#btn-wifi-config.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h5.svg)") WIFI Configss
 				li
-					button#btn-qrcode.btn.btn-default.navbar-btn QR Code
+					button#btn-qrcode.btn.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h7.svg)") QRsss Codes
 			ul.nav.navbar-nav.navbar-right
 				li
 					.lang-container
@@ -71,3 +71,5 @@ block scripts
 	script(src='blockly/kidbright/blocks.js')
 	script(src='blockly/kidbright/generators.js')
 	script(src='blockly/kidbright/app.js')
+
+

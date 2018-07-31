@@ -1,13 +1,21 @@
 $(document).ready(function() {
 	// update caption
-	$('#btn-open').text(LANG_OPEN_FILE);
-	$('#btn-save').text(LANG_SAVE_FILE);
-	$('#btn-delete').text(LANG_DELETE_FILE);
-	$('#btn-build').text(LANG_BUILD);
-	$('#btn-setclock').text(LANG_SETCLOCK);
-	$('#btn-update').text(LANG_UPDATE);
-	$('#btn-wifi-config').text(LANG_WIFI_CONFIG);
-	$('#btn-qrcode').text(LANG_QRCODE);
+	// $('#btn-open').text(LANG_OPEN_FILE);
+	// $('#btn-save').text(LANG_SAVE_FILE);
+	// $('#btn-delete').text(LANG_DELETE_FILE);
+	// $('#btn-build').text(LANG_BUILD);
+	// $('#btn-setclock').text(LANG_SETCLOCK);
+	// $('#btn-update').text(LANG_UPDATE);
+	// $('#btn-wifi-config').text(LANG_WIFI_CONFIG);
+	// $('#btn-qrcode').text(LANG_QRCODE);
+	$('#btn-open').text("");
+	$('#btn-save').text("");
+	$('#btn-delete').text("");
+	$('#btn-build').text("");
+	$('#btn-setclock').text("");
+	$('#btn-update').text("");
+	$('#btn-wifi-config').text("");
+	$('#btn-qrcode').text("");
 	// add title
 	$('#btn-open').prop('title', LANG_OPEN_FILE_TITLE);
 	$('#btn-save').prop('title', LANG_SAVE_FILE_TITLE);

@@ -44,9 +44,12 @@ h6 {
   margin: 0 10px 20px 0;
 }
 .navbar-btn {
-  min-width: 100px;
-  margin-right: 8px;
+  min-width: 50px;
+  min-height: 50px;
+  margin-right: 10px;
+  opacity: 1;
 }
+.navbar-btn:hover{opacity: 0.7;}
 .glyphicon {
   margin-right: 8px;
 }
@@ -170,14 +173,14 @@ h6 {
   background-position: center;
 }
 .header {
-  background-color: #4c6972;
+  background-color: #073943;
 }
 .footer {
   display: table;
   width: 100%;
   height: 40px;
   padding: 3px 0 0 18px;
-  background-color: #4c6972;
+  background-color: #073943;
 }
 .footer-container {
   display: table-cell;
@@ -245,8 +248,9 @@ h6 {
   position: absolute;
 }
 .kb_logo_top {
-  margin-top: 12px;
-  margin-right: 8px;
+  margin-top: 5px;
+  margin-right: 30px;
+  vertical-align: middle;
 }
 .kb_news {
   width: 520px;
@@ -285,3 +289,9 @@ h6 {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
+.btn-icon {
+  background-color: transparent;
+  background-repeat:no-repeat;
+  background-position: center;
+  border:none;
+  }
