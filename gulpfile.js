@@ -43,7 +43,7 @@ gulp.task('download_xtensa', ['install'], () => {
             break
         }
     }
-    if (fs.existsSync(pathx) || fs.existsSync(pathnlt) || fs.existsSync(pathnl)) {
+    if (fs.existsSync(pathx)) {
         return
     }
     else {
@@ -53,22 +53,8 @@ gulp.task('download_xtensa', ['install'], () => {
 })
 
 gulp.task('download_esptool', ['download_xtensa'], () => {
-    if (process.platform == 'darwin') {
-        if (!fs.existsSync(pathnet) || !fs.existsSync(pathne)) {
-            return download(pathe)
-                .pipe(gulp.dest(__dirname))
-        }
-        return
-    } else if (process.platform == 'win32') {
-        if (!fs.existsSync(pathne)) {
-            return download(pathe)
-                .pipe(gulp.dest(__dirname))
-        }
-        return
-    } else {
-        return download(pathe)
+    return download(pathe)
             .pipe(gulp.dest(__dirname))
-    }
 })
 
 gulp.task('decompress', ['download_esptool'], () => {
