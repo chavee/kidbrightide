@@ -6,7 +6,8 @@
   "dependencies": {
     "gulp-download": "0.0.1",
     "gulp-exec": "^3.0.2",
-    "gulp-install": "^1.1.0"
+    "gulp-install": "^1.1.0",
+    "kidbrighide-server": "file:app"
   },
   "devDependencies": {
     "del": "^3.0.0",
