@@ -2,6 +2,12 @@ function HomeController() {
 	var that = this;
 	var deletingBoardId = null;
 	var standalone = false;
+	// console.log(localStorage.lang);
+	var state_lang;
+	if(localStorage.lang=="en"){
+		document.getElementById("toggle-lang").setAttribute('checked',"");
+	}
+	state_lang = document.getElementById("toggle-lang").checked;
 
 	$('#home-lang-en').click(function() {
 		homeSetLanguage('en');
@@ -9,6 +15,24 @@ function HomeController() {
 
 	$('#home-lang-th').click(function() {
 		homeSetLanguage('th');
+	});
+	$('#toggle-lang').click(function(){
+
+		state_lang = !state_lang;
+		console.log(state_lang);
+		if(state_lang!=undefined){
+			if(state_lang==true){
+				localStorage.lang = "en";
+				 homeSetLanguage('en');
+			}
+			else{
+				localStorage.lang = "th";
+				 homeSetLanguage('th');
+			}
+		}
+	
+		// console.log("local str "+localStorage.lang);
+
 	});
 
 	// KidBrightOS, enable build button and set clock button

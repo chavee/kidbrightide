@@ -5,7 +5,23 @@ block content
 		.container
 			ul.nav.navbar-nav
 				img(src="/images/SVG/Logo.svg", height="60").kb_logo_top
-			ul.nav.navbar-nav(style="padding-left: 10px")
+			ul.nav.navbar-nav.navbar-right
+				li
+					input#toggle-lang.toggle(type='checkbox' checked=false style="margin-top:10px")
+				//- li
+				//- 	.lang-container
+				//- 		.lang-text
+				//- 			a#home-lang-en(href="#",title="Switch to english language").link-url Eng
+				//- 		.lang-space.link-url
+				//- 			| |
+				//- 		.lang-text
+				//- 			a#home-lang-th(href="#",title="สลับไปใช้ภาษาไทย").link-url ไทย
+				li(style="padding-left: 10px")
+					.lang-container
+						.lang-text(style="color: #fff")#version-text
+							| version
+
+			ul.nav.navbar-nav.navbar-right(style="padding-right: 20px")
 				li
 					button#btn-open.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h3.svg)")
 				li
@@ -13,26 +29,17 @@ block content
 				li
 					button#btn-delete.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h2.svg)") Delete File
 				li
-					button#btn-build.navbar-btn(disabled="true").btn-icon(style="background-image: url(/images/SVG/h1.svg)") Program Build
+					button#btn-build.navbar-btn.btn-icon(disabled="true" style="background-image: url(/images/SVG/h1.svg)") Program Build
 				li
-					button#btn-setclock.setclock-btn.navbar-btn(disabled="true").btn-icon(style="background-image: url(/images/SVG/h6.svg)") Set Clock
+					button#btn-setclock.setclock-btn.navbar-btn.btn-icon(disabled="true" style="background-image: url(/images/SVG/h6.svg)") Set Clock
 				li
 					button#btn-wifi-config.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h5.svg)") WIFI Configss
 				li
 					button#btn-qrcode.btn.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h7.svg)") QRsss Codes
-			ul.nav.navbar-nav.navbar-right
-				li
-					.lang-container
-						.lang-text
-							a#home-lang-en(href="#",title="Switch to english language").link-url Eng
-						.lang-space.link-url
-							| |
-						.lang-text
-							a#home-lang-th(href="#",title="สลับไปใช้ภาษาไทย").link-url ไทย
-				li(style="padding-left: 10px")
-					.lang-container
-						.lang-text(style="color: #a0a0a0")#version-text
-							| version
+		
+
+
+
 	// blockly category language
 	- if (ulang == 'th')
 		include blockly-th
@@ -54,6 +61,7 @@ block content
 	include modals/qrcode
 
 block scripts
+
 	script(src='/vendor/jquery-2.2.3.min.js')
 	script(src='/vendor/jquery.form.min.js')
 	script(src='/vendor/bootstrap.min.js')
