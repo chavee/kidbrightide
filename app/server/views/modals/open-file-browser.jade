@@ -1,15 +1,32 @@
+//- .modal-open-file-browser.modal.fade
+//- 	.modal-dialog(style="width:50%; height:200; margin: auto")
+//- 		.modal-content
+//- 			.modal-header
+//- 				//button.close(data-dismiss='modal') x
+//- 				h4
+//- 			.modal-body(style="padding-bottom: 5px !important")
+//- 				.list-group(style="margin-bottom: 0px !important")#file-list
+//- 			div(style="text-align: right;padding-right: 20px")
+//- 				label
+//- 					input(type="checkbox")#insert-checkbox
+//- 					div(style="display: inline;vertical-align: middle")#insert-text Insert Mode
+//- 			.modal-footer
+//- 				button#btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
+//- 				button#btn-ok.btn.btn-primary OK
+
 .modal-open-file-browser.modal.fade
-	.modal-dialog(style="width:50%; height:200; margin: auto")
+	.modal-dialog(style="width:50%; height:200;")
 		.modal-content
-			.modal-header
-				//button.close(data-dismiss='modal') x
-				h4
-			.modal-body(style="padding-bottom: 5px !important")
+			.modal-header.modal-h
+				img(src="/images/SVG/modalicon/m1.svg", style="height:40px; display:inline;")
+				h4(style="display:inline; vertical-align:middle;")
+			.modal-body.modal-b(style="padding-bottom: 5px !important")
 				.list-group(style="margin-bottom: 0px !important")#file-list
-			div(style="text-align: right;padding-right: 20px")
-				label
-					input(type="checkbox")#insert-checkbox
-					div(style="display: inline;vertical-align: middle")#insert-text Insert Mode
-			.modal-footer
-				button#btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
-				button#btn-ok.btn.btn-primary OK
+			div(style="text-align: right;padding-right: 20px").modal-b
+				p(style="display:inline;")
+					input(type="checkbox" style="display:inline;")#insert-checkbox
+					div(style="display: inline;vertical-align: middle;")#insert-text Insert Mode
+			.modal-footer.modal-f
+				button#btn-cancel(data-dismiss="modal").cancel.btn.btn-danger Cancel
+				button#btn-ok.btn.btn-success OK
+

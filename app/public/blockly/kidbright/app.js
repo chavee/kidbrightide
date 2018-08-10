@@ -31,8 +31,8 @@ $(document).ready(function() {
 			startScale: 1,
 			maxScale: 2,
 			minScale: 0.3,
-			scaleSpeed: 1.2
-			//scrollbars: false
+			scaleSpeed: 1.2,
+			// scrollbars: true
 		}
 	});
 

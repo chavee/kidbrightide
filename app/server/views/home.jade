@@ -1,13 +1,13 @@
 extends layout
 
 block content
-	nav.navbar-default.header
+	nav.navbar-default(style="padding-left:0px;").header
 		.container
 			ul.nav.navbar-nav
 				img(src="/images/SVG/Logo.svg", height="60").kb_logo_top
 			ul.nav.navbar-nav.navbar-right
 				li
-					input#toggle-lang.toggle(type='checkbox' checked=false style="margin-top:10px")
+					input#toggle-lang.toggle(type='checkbox' checked=false style="margin-top:15px")
 				//- li
 				//- 	.lang-container
 				//- 		.lang-text
@@ -21,7 +21,7 @@ block content
 						.lang-text(style="color: #fff")#version-text
 							| version
 
-			ul.nav.navbar-nav.navbar-right(style="padding-right: 20px")
+			ul.nav.navbar-nav.navbar-right(style="padding-right:1%")
 				li
 					button#btn-open.navbar-btn.btn-icon(style="background-image: url(/images/SVG/h3.svg)")
 				li

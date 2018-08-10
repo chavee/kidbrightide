@@ -1,10 +1,22 @@
+//- .modal-build.modal.fade
+//- 	.modal-dialog(style="width:40%; margin: auto")
+//- 		.modal-content
+//- 			.modal-header
+//- 				//button.close(data-dismiss='modal') x
+//- 				h4
+//- 			.modal-body
+//- 				ul
+//- 			.modal-footer
+//- 				button(data-dismiss="modal")#build-ok.btn.btn-primary OK
+
 .modal-build.modal.fade
-	.modal-dialog(style="width:40%; margin: auto")
+	.modal-dialog
 		.modal-content
-			.modal-header
-				//button.close(data-dismiss='modal') x
-				h4
-			.modal-body
+			.modal-header.modal-h
+				img(src="/images/SVG/modalicon/m4.svg", style="height:40px; display:inline;")
+				h4(style="display:inline; vertical-align:middle;")
+			.modal-body.modal-b
 				ul
-			.modal-footer
-				button(data-dismiss="modal")#build-ok.btn.btn-primary OK
+			.modal-footer.modal-f
+				button(data-dismiss="modal")#build-ok.btn.btn-success OK
+

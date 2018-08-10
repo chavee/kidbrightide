@@ -8,7 +8,10 @@ function HomeController() {
 		document.getElementById("toggle-lang").setAttribute('checked',"");
 	}
 	state_lang = document.getElementById("toggle-lang").checked;
-
+	var ver = document.getElementsByClassName("lang-container")[0];
+	ver.style.backgroundColor=localStorage.verColor;
+	// console.log(ver);
+	
 	$('#home-lang-en').click(function() {
 		homeSetLanguage('en');
 	});
@@ -24,10 +27,14 @@ function HomeController() {
 			if(state_lang==true){
 				localStorage.lang = "en";
 				 homeSetLanguage('en');
+				 localStorage.verColor="#55C613";
+				 ver.style.backgroundColor="#55C613";
 			}
 			else{
 				localStorage.lang = "th";
 				 homeSetLanguage('th');
+				 localStorage.verColor="#7F94F8";
+				 ver.style.backgroundColor="#7F94F8";
 			}
 		}
 	

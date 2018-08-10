@@ -1,17 +1,36 @@
+//- .modal-wifi-config.modal.fade
+//-     .modal-dialog
+//-         .modal-content
+//-             .modal-header
+//-                 //button.close(data-dismiss='modal') x
+//-                 h4
+//-             .modal-body
+//-                 label SSID
+//-                 input#sta-ssid.form-control(type="text")
+//-                 label Password
+//-                 input#sta-password.form-control(type="password")
+//-                 label
+//-                 input(type="checkbox")#wifi-iot-checkbox
+//-                 div(style="display: inline;vertical-align: middle")#wifi-iot-text Insert Mode
+//-             .modal-footer
+//-                 button#btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
+//-                 button(data-dismiss="modal")#wifi-build-ok.btn.btn-primary OK
+
 .modal-wifi-config.modal.fade
     .modal-dialog
         .modal-content
-            .modal-header
+            .modal-header.modal-h
+                img(src="/images/SVG/modalicon/m6.svg", style="height:40px; display:inline;")
                 //button.close(data-dismiss='modal') x
-                h4
-            .modal-body
-                label SSID
+                h4(style="display:inline; vertical-align:middle;")
+            .modal-body.modal-b
+                p SSID
                 input#sta-ssid.form-control(type="text")
-                label Password
+                p Password
                 input#sta-password.form-control(type="password")
                 label
                 input(type="checkbox")#wifi-iot-checkbox
                 div(style="display: inline;vertical-align: middle")#wifi-iot-text Insert Mode
-            .modal-footer
-                button#btn-cancel(data-dismiss="modal").cancel.btn.btn-default Cancel
-                button(data-dismiss="modal")#wifi-build-ok.btn.btn-primary OK
+            .modal-footer.modal-f
+                button#btn-cancel(data-dismiss="modal").cancel.btn.btn-danger Cancel
+                button(data-dismiss="modal")#wifi-build-ok.btn.btn-success OK
